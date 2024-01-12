@@ -9,7 +9,7 @@ export async function POST(req) {
         prompt,
         model: 'command-nightly',
         max_tokens: 300,
-        stop_sequences: ['\n'],
+        stop_sequences: [],
         temperature: .9,
         return_likelihoods: 'NONE',
         stream: true
