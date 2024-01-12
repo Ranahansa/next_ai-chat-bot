@@ -3,7 +3,7 @@ import {StreamingTextResponse, CohereStream} from 'ai'
 export const runtime = 'edge'
 
 export async function POST(req) {
-    const {prompt} = req;
+    const {prompt} = await req.json();
 
     const body = JSON.stringify({
         prompt,
@@ -33,5 +33,5 @@ export async function POST(req) {
     const stream = CohereStream(response)
 
     return new StreamingTextResponse(stream)
-    
+
 }
